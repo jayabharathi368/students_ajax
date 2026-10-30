@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>students ajax</title>
+</head>
+<body>
+<h2>Employee Form</h2>
+<form id="employeeForm">
+    <input type="hidden" name="id" id="id">
+ <input type="text" name="name"
+           id="name" placeholder="Name" required>
+<input type="email" name="email"
+           id="email" placeholder="Email" required>
+ <button type="submit">Save</button>
+</form>
+<p id="message"></p>
+<hr>
+<h3>Employee List</h3>
+<div id="employeeList"></div>
+<script src="script.js"></script>
+</body>
+</html>
