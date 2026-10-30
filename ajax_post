@@ -1,0 +1,27 @@
+document.getElementById('employeeForm')
+    .addEventListener('submit', function (event) {
+ event.preventDefault();
+const formData = new FormData(this);
+        fetch('save.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('message').textContent = data;
+            this.reset();
+            document.getElementById('id').value = '';
+            loadEmployees();
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    });
+function loadEmployees() {
+    fetch('list.php')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('employeeList').innerHTML = data;
+        });
+}
+loadEmployees();
